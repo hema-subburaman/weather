@@ -13,9 +13,6 @@ const App = () => {
 
   const API_KEY = 'f0a3aae04dec2f55a6dd08256e2ab06c'
 
-  //https://api.openweathermap.org/data/2.5/weather?lat=${s.lat}&lon=${s.lon}&appid={API_KEY}&units=metric
-  //http://api.openweathermap.org/geo/1.0/direct?q={query}&limit=5&appid={API_KEY}
-
   useEffect(() => {
     if(city.trim().length >=3 && !weather) {
       const timer = setTimeout(() => fetchSuggestions(city), 500);
@@ -80,7 +77,7 @@ const App = () => {
 
           {!weather ? (
             <form onSubmit={handleSearch} className='flex flex-col relative'>
-              <input value={city} onChange={(e) => setCity(e.target.value)} placeholder='Enter City or COuntry (min 3 letters)'
+              <input value={city} onChange={(e) => setCity(e.target.value)} placeholder='Enter City or Country (min 3 letters)'
               className='mb-4 p-3 rounded border border-white bg-transparent text-white placeholder-white focus:outline-none
               focus:border-blue-300 transition duration-300'/>
               {suggestion.length > 0 && (
